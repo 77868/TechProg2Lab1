@@ -1,11 +1,21 @@
 #pragma once
+#include <fstream>
+enum
+{
+	DRUMS,
+	STRINGED,
+	WIND
+};
 class orchestra
 {
 private:
-	char ownnerName[64],name[64];
-	double price;
-
 public:
-	void save(std::ofstream outf);
-	void load(std::ifstream inf);
+	virtual void print(std::ostream &out)=0;
+	virtual char *getName() = 0;
+	virtual void save(std::ofstream &outf) = 0;
+	virtual void edit() = 0;
+	virtual void getInfo() = 0;
+	friend std::ostream &operator<<(std::ostream &output, orchestra &object);
+	orchestra(){};
+	~orchestra(){};
 };
