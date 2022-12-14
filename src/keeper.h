@@ -32,4 +32,6 @@ public:
 
 	keeper();
 	keeper(char *inputFileName);
+
+	~keeper();
 };

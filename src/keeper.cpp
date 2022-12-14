@@ -285,3 +285,8 @@ keeper::keeper(char *inputFileName)
 	}
 	inputFile.close();
 }
+keeper::~keeper()
+{
+	clear();
+	delete[] list;
+}
